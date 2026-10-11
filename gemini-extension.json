@@ -1,0 +1,11 @@
+{
+  "name": "threat-unknown",
+  "version": "0.1.0",
+  "description": "Connect your agent to Threat Unknown. Read your findings and security plan, follow our security agents, and review changes waiting for approval, with safety rules built in.",
+  "mcpServers": {
+    "threat-unknown": {
+      "httpUrl": "https://mcp.threatunknown.com/v1/mcp"
+    }
+  },
+  "contextFileName": "threat-unknown.md"
+}

@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "threat-unknown": {
+      "type": "http",
+      "url": "https://mcp.threatunknown.com/v1/mcp"
+    }
+  }
+}

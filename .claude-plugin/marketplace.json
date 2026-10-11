@@ -1,0 +1,12 @@
+{
+  "name": "threat-unknown",
+  "owner": { "name": "Threat Unknown", "url": "https://threatunknown.com" },
+  "description": "Threat Unknown's plugin for Claude.",
+  "plugins": [
+    {
+      "name": "threat-unknown",
+      "source": "./",
+      "description": "Connect your agent to Threat Unknown. Read your findings and security plan, follow our security agents, and review changes waiting for approval, with safety rules built in."
+    }
+  ]
+}

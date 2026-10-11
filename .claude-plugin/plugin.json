@@ -1,0 +1,18 @@
+{
+  "name": "threat-unknown",
+  "version": "0.1.0",
+  "description": "Connect your agent to Threat Unknown. Read your findings and security plan, follow our security agents, and review changes waiting for approval, with safety rules built in.",
+  "author": {
+    "name": "Threat Unknown",
+    "url": "https://threatunknown.com"
+  },
+  "homepage": "https://threatunknown.com",
+  "repository": "https://github.com/ThreatUnknown/agent-plugin",
+  "license": "Apache-2.0",
+  "keywords": [
+    "security",
+    "findings",
+    "approvals",
+    "mcp"
+  ]
+}
