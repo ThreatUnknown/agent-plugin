@@ -46,7 +46,8 @@ Some approvals let a change run that cannot be undone.
 | `resolve_pending_approval` | `list_pending_approvals` | Only the list says what changes and whether it can be undone |
 | `send_session_message` | `read_agent_session` | A question the agent is waiting on lives in the arguments of a `present_choices` tool call, not in its messages |
 | `launch_agent_session` | `list_agent_sessions` | The same agent may already be running |
-| Anything about a finding | `get_findings` (or a platform's `*_get_findings`) | Finding and resource ids come only from there |
+| Anything about a finding, `accept_risk` on findings | `list_appsec_findings` | Fingerprints come only from there |
+| `set_policy_packs` | `list_policy_packs`, or `recommend_policy_packs` for what fits | Policy ids, and what each repository runs now, come only from there |
 
 ## 4. Relay refusals; never retry them
 
@@ -64,11 +65,8 @@ is not waiting on an answer, or the change is permanent and needs their yes.
 ## 5. Say only what a tool result supports
 
 - Never say something is fixed, safe or checked unless a tool result says so.
-- An accepted risk (from `get_exceptions`) is a decision to live with a finding. It is not a
-  fix. Say "accepted", not "resolved".
-- `needs_access` means we could not look. It is a gap in what was checked, never a pass.
-- `error` means the check broke on our side. `manual_review` means a person has to look.
-  Neither is a pass.
+- An accepted risk is a decision to live with a finding, and a false positive is someone saying
+  it is not real. Neither is a fix. Say "accepted", not "resolved".
 - Findings are what the last scan saved. They can be out of date. If the person needs to
   know the current state, offer to start an assessment.
 - An agent that says it changed something has only said so. Point to the finding or the

@@ -7,11 +7,13 @@ approval.
 This adds two things to your agent:
 
 - **The Threat Unknown connection**: `https://mcp.threatunknown.com/v1/mcp`.
-- **Four skills**, plain instructions your agent reads when they apply:
+- **Five skills**, plain instructions your agent reads when they apply:
   - `threat-unknown-safety`: the rules for every Threat Unknown call.
   - `review-pending-approvals`: go through what is waiting for approval, one item at a time.
   - `triage-findings`: sort findings into real problems, accepted risks and gaps.
   - `run-a-security-agent`: start one of our agents, follow it and answer its questions.
+  - `threat-model-a-feature`: write a feature's threat model and keep it current, and ask for a
+    risk to be accepted through a pull request.
 
 There is no code here. Nothing runs on your computer.
 
