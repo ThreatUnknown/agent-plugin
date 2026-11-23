@@ -17,7 +17,7 @@ Run these in Claude Code, then open `/mcp`, choose `threat-unknown`, and sign in
 
 ### Codex
 
-Run these in a terminal, complete sign-in in your browser, then start a new Codex session.
+Run these in a terminal and sign in in your browser.
 
 ```sh
 codex plugin marketplace add ThreatUnknown/agent-plugin
@@ -25,13 +25,15 @@ codex plugin add threat-unknown@threat-unknown
 codex mcp login threat-unknown
 ```
 
-For a Codex client without plugin support, add the connection and skills separately.
+If you use the Codex desktop app or the Codex extension in VS Code, you can add the connection and skills separately. Run these in a terminal.
 
 ```sh
 codex mcp add threat-unknown --url https://mcp.threatunknown.com/v1/mcp
 codex mcp login threat-unknown
-npx skills add ThreatUnknown/agent-plugin --agent codex
+npx skills add ThreatUnknown/agent-plugin
 ```
+
+If `codex` is not found, install Codex first or run it using its full path.
 
 ### Cursor
 
@@ -77,7 +79,7 @@ Add `https://mcp.threatunknown.com/v1/mcp` in your agent's server settings and s
 
 ## Try it
 
-Sign in with your Threat Unknown account. Your role controls what your agent can do. Start with a read-only question in a connected repository.
+**Start a new session** after you install and sign in. This loads the skills and tools. Your Threat Unknown role controls what your agent can do. Try a read-only question in a connected repository.
 
 > What did Threat Unknown find in this repository, and what should I fix first?
 
