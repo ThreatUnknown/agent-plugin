@@ -1,6 +1,6 @@
 {
   "name": "threat-unknown",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "Scan connected GitHub repositories, read findings, check packages, and maintain feature threat models.",
   "author": {
     "name": "Threat Unknown",
