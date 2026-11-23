@@ -6,13 +6,28 @@ Threat Unknown checks source code, infrastructure definitions, and dependencies.
 
 ## Install
 
+### Claude app
+
+In Claude on desktop or web, open **Customize → Plugins → Add → Add marketplace**. Paste `https://github.com/ThreatUnknown/agent-plugin` and install **Threat Unknown**.
+
+Open the plugin's **Connectors** tab. Choose **Connect** next to `threat-unknown` and sign in. If you see **Add**, choose it first.
+
+If you do not see **Connect**, open **Settings → Connectors → Add custom connector**. Name it **Threat Unknown**, paste `https://mcp.threatunknown.com/v1/mcp`, and choose **Sign in now** and **Use Claude's published identity**.
+
 ### Claude Code
 
-Run these in Claude Code, then open `/mcp`, choose `threat-unknown`, and sign in.
+Install the plugin from your terminal.
 
-```text
-/plugin marketplace add ThreatUnknown/agent-plugin
-/plugin install threat-unknown@threat-unknown
+```sh
+claude plugin install threat-unknown --marketplace ThreatUnknown/agent-plugin
+```
+
+Open Claude Code. Run `/mcp`, choose `threat-unknown`, then select **Authenticate** to sign in.
+
+To add just the connector, run this in your terminal and sign in through `/mcp`.
+
+```sh
+claude mcp add --transport http threat-unknown https://mcp.threatunknown.com/v1/mcp
 ```
 
 ### Codex
@@ -79,9 +94,9 @@ Add `https://mcp.threatunknown.com/v1/mcp` in your agent's server settings and s
 
 ## Try it
 
-**Start a new session** after you install and sign in. This loads the skills and tools. Your Threat Unknown role controls what your agent can do. Try a read-only question in a connected repository.
+**Open a new chat or session** after you sign in. Ask your agent:
 
-> What did Threat Unknown find in this repository, and what should I fix first?
+> list my Threat Unknown findings
 
 The plugin includes five skills.
 
