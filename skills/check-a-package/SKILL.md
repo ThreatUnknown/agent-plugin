@@ -1,6 +1,6 @@
 ---
 name: check-a-package
-description: Use when the person asks whether to add or upgrade a package from the npm registry or wants Threat Unknown to check a package version.
+description: Use when asked if an npm package is safe, whether to add or upgrade it, or to check a named dependency or version before installing it.
 ---
 
 # Check a package
