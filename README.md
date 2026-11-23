@@ -1,70 +1,94 @@
-# Threat Unknown for your agent
+# Threat Unknown for your coding agent
 
-Connect the agent you already use to Threat Unknown. Ask it about your findings and
-security plan, start and follow our security agents, and review changes waiting for your
-approval.
+Scan a connected GitHub repository, read findings, check a package before adding it, and keep a feature's threat model up to date from your coding agent.
 
-This adds two things to your agent:
-
-- **The Threat Unknown connection**: `https://mcp.threatunknown.com/v1/mcp`.
-- **Five skills**, plain instructions your agent reads when they apply:
-  - `threat-unknown-safety`: the rules for every Threat Unknown call.
-  - `review-pending-approvals`: go through what is waiting for approval, one item at a time.
-  - `triage-findings`: sort findings into real problems, accepted risks and gaps.
-  - `run-a-security-agent`: start one of our agents, follow it and answer its questions.
-  - `threat-model-a-feature`: write a feature's threat model and keep it current, and ask for a
-    risk to be accepted through a pull request.
-
-There is no code here. Nothing runs on your computer.
+Threat Unknown checks source code, infrastructure definitions, and dependencies. Use the Threat Unknown portal to run penetration tests and request fixes. When Threat Unknown opens a fix pull request, a person reviews and merges it.
 
 ## Install
 
-**Claude Code**
+### Claude Code
 
-```
+Run these in Claude Code, then open `/mcp`, choose `threat-unknown`, and sign in.
+
+```text
 /plugin marketplace add ThreatUnknown/agent-plugin
 /plugin install threat-unknown@threat-unknown
 ```
 
-**Cursor, VS Code with Copilot, Codex**: install from this repository's address,
-`https://github.com/ThreatUnknown/agent-plugin`.
+### Codex
 
-- Cursor: Customize, then Install.
-- VS Code: run **Chat: Install Plugin From Source** and paste the address.
-- Codex: `codex plugin marketplace add ThreatUnknown/agent-plugin`, then `/plugins`.
+Run these in a terminal, complete sign-in in your browser, then start a new Codex session.
 
-**Gemini CLI**
-
+```sh
+codex plugin marketplace add ThreatUnknown/agent-plugin
+codex plugin add threat-unknown@threat-unknown
+codex mcp login threat-unknown
 ```
+
+For a Codex client without plugin support, add the connection and skills separately.
+
+```sh
+codex mcp add threat-unknown --url https://mcp.threatunknown.com/v1/mcp
+codex mcp login threat-unknown
+npx skills add ThreatUnknown/agent-plugin --agent codex
+```
+
+### Cursor
+
+If your team lists Threat Unknown in **Customize**, choose **Install**. Otherwise, add the skills in a terminal.
+
+```sh
+npx skills add ThreatUnknown/agent-plugin --agent cursor
+```
+
+Add this entry to your existing `~/.cursor/mcp.json`, or use it to create the file.
+
+```json
+{
+  "mcpServers": {
+    "threat-unknown": {
+      "url": "https://mcp.threatunknown.com/v1/mcp"
+    }
+  }
+}
+```
+
+Open the server in **Customize** and sign in when prompted.
+
+### VS Code with GitHub Copilot
+
+In the Command Palette, run **Chat: Install Plugin from Source** and paste `https://github.com/ThreatUnknown/agent-plugin`. Sign in when prompted.
+
+### Gemini CLI
+
+Run this in a terminal. Then open Gemini and run `/mcp auth threat-unknown` to sign in.
+
+```sh
 gemini extensions install https://github.com/ThreatUnknown/agent-plugin
 ```
 
-**Any other agent that reads skills**
+### Other agents
 
-```
+```sh
 npx skills add ThreatUnknown/agent-plugin
 ```
 
-Then add the connection above in that agent's own settings.
+Add `https://mcp.threatunknown.com/v1/mcp` in your agent's server settings and sign in.
 
-## Signing in
+## Try it
 
-The first time your agent calls Threat Unknown, it opens a browser. Sign in with your
-Threat Unknown account. There are no keys to copy.
+Sign in with your Threat Unknown account. Your role controls what your agent can do. Start with a read-only question in a connected repository.
 
-## What your agent can do
+> What did Threat Unknown find in this repository, and what should I fix first?
 
-Your agent acts as you. It can do what your role in Threat Unknown allows, and nothing
-more. If your role changes, so does what your agent can do, within minutes.
+The plugin includes five skills.
 
-That includes approvals: if you can approve changes, so can your agent. Nothing changes in
-your accounts without an approval, and approving a change that cannot be undone has to say
-so explicitly. The skills tell your agent to ask you first. They are guidance, not the
-safeguard: Threat Unknown checks every request itself.
-
-To disconnect, remove the server from your agent or sign out there. Anyone removed from
-your team loses their agent's access too.
+- [Work safely with Threat Unknown](skills/threat-unknown-safety/SKILL.md)
+- [Triage findings](skills/triage-findings/SKILL.md)
+- [Scan a repository](skills/scan-a-repository/SKILL.md)
+- [Check a package](skills/check-a-package/SKILL.md)
+- [Threat-model a feature](skills/threat-model-a-feature/SKILL.md)
 
 ## License
 
-Apache License 2.0. See [LICENSE](LICENSE). The license does not grant use of the Threat Unknown name or logo.
+[Apache License 2.0](LICENSE). The license does not grant use of the Threat Unknown name or logo.
