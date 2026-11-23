@@ -8,11 +8,22 @@ Threat Unknown checks source code, infrastructure definitions, and dependencies.
 
 ### Claude app
 
-In Claude on desktop or web, open **Customize → Plugins → Add → Add marketplace**. Paste `https://github.com/ThreatUnknown/agent-plugin` and install **Threat Unknown**.
+1. In the left sidebar, click **Plugins**. In the top right, click **Add**, then **Add marketplace**. Enter `ThreatUnknown/agent-plugin`.
+2. On the plugin listing, click **Add to this computer**.
+3. Open the plugin's `threat-unknown` connector and click **Connect**. Sign in to Threat Unknown in your browser.
 
-Open the plugin's **Connectors** tab. Choose **Connect** next to `threat-unknown` and sign in. If you see **Add**, choose it first.
+   If there is no **Connect** button, click **Plugins**, **Add**, then **Add custom connector**. Type `Threat Unknown` in the first box and enter `https://mcp.threatunknown.com/v1/mcp` as the address. **Continue** stays grey until both boxes are filled. Click **Continue**.
 
-If you do not see **Connect**, open **Settings → Connectors → Add custom connector**. Name it **Threat Unknown**, paste `https://mcp.threatunknown.com/v1/mcp`, and choose **Sign in now** and **Use Claude's published identity**.
+   On the next screen, the defaults are marked **Detected**. **Keep these defaults**.
+
+   - **Authentication** is **Sign in now**.
+   - **OAuth client** is **Use Claude's published identity**.
+
+   Click **Continue**. Your browser opens. Sign in to Threat Unknown to finish connecting.
+
+4. **Start a new chat** and ask:
+
+   > list my Threat Unknown findings
 
 ### Claude Code
 
