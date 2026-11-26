@@ -2,7 +2,21 @@
 
 Scan a connected GitHub repository, read findings, check a package before adding it, and keep a feature's threat model up to date from your coding agent.
 
-Threat Unknown checks source code, infrastructure definitions, and dependencies. Use the Threat Unknown portal to run penetration tests and request fixes. When Threat Unknown opens a fix pull request, a person reviews and merges it.
+Threat Unknown checks source code, infrastructure definitions, and dependencies. Your agent can ask Threat Unknown to fix a finding, or fix it itself from our suggested fix, and can follow and stop a penetration test. Starting a penetration test stays in the Threat Unknown portal. When Threat Unknown opens a fix pull request, a person reviews and merges it.
+
+## Skills
+
+Your agent reads these when they apply:
+
+- `threat-unknown-safety`: the rules for every Threat Unknown call.
+- `check-your-changes`: check what you changed before you say the work is done.
+- `before-you-commit-push-or-deploy`: check your changes before a commit, a push, a pull request or a deploy.
+- `scan-a-repository`: scan the branch you pushed before the pull request.
+- `check-a-package`: check an npm package before you add, upgrade or start using it.
+- `triage-findings`: sort findings into real problems, accepted risks and gaps.
+- `fix-a-finding`: ask Threat Unknown to open a fix, or make the fix yourself from our suggested fix.
+- `pen-test-status`: follow a penetration test, read its report, or stop it.
+- `threat-model-a-feature`: write a feature's threat model and keep it current, and ask for a risk to be accepted through a pull request.
 
 ## Install
 
