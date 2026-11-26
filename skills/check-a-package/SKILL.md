@@ -1,6 +1,6 @@
 ---
 name: check-a-package
-description: Use when asked if an npm package is safe, whether to add or upgrade it, or to check a named dependency or version before installing it.
+description: Use before you add, install, upgrade, or start using an npm package in code, including one already in package.json that this code did not use before, and when asked if a package or version is safe.
 ---
 
 # Check a package

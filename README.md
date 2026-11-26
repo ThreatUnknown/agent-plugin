@@ -2,7 +2,7 @@
 
 Scan a connected GitHub repository, read findings, check a package before adding it, and keep a feature's threat model up to date from your coding agent.
 
-Threat Unknown checks source code, infrastructure definitions, and dependencies. Use the Threat Unknown portal to run penetration tests and request fixes. When Threat Unknown opens a fix pull request, a person reviews and merges it.
+Threat Unknown checks source code, infrastructure definitions, and dependencies. Your agent can ask Threat Unknown to fix a finding, or fix it itself from our suggested fix, and can follow and stop a penetration test. Starting a penetration test stays in the Threat Unknown portal. When Threat Unknown opens a fix pull request, a person reviews and merges it.
 
 ## Install
 

@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "threat-unknown",
-  "version": "0.2.2",
+  "version": "0.3.0",
   "description": "Scan connected GitHub repositories, read findings, check packages, and maintain feature threat models.",
   "author": {
     "name": "Threat Unknown",
